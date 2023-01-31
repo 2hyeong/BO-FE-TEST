@@ -9,7 +9,6 @@ export interface QueryState {
   filter: filter;
   page: number;
   pageOptions: pageOptions;
-  limit: number;
 }
 
 const initialState: QueryState = {
@@ -17,7 +16,6 @@ const initialState: QueryState = {
   filter: "all",
   page: 1,
   pageOptions: 10,
-  limit: 10,
 };
 
 export const querySlice = createSlice({
@@ -29,7 +27,6 @@ export const querySlice = createSlice({
       state.filter = action.payload.filter;
       state.page = action.payload.page;
       state.pageOptions = action.payload.pageOptions;
-      state.limit = action.payload.limit;
     },
   },
 });
