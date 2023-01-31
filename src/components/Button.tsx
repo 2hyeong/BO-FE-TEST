@@ -9,6 +9,7 @@ interface IButton {
   icon?: string;
   className?: string;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  disabled?: boolean;
   onClick?: () => void;
 }
 
@@ -18,16 +19,23 @@ export default function Button({
   isDark = false,
   outlined = false,
   type = "button",
+  disabled = false,
   onClick,
 }: IButton) {
   const bgCss = isDark ? "bg-dark" : "bg-white";
   const colorCss = isDark ? "text-light" : "text-dark";
   const outlinedCss = outlined ? "outlined" : "";
+  const disabledCss = disabled ? "disabled" : "";
 
-  const classNames = `${className} ${bgCss} ${colorCss} ${outlinedCss}`;
+  const classNames = `${className} ${disabledCss} ${bgCss} ${colorCss} ${outlinedCss}`;
 
   return (
-    <button type={type} onClick={onClick} className={classNames}>
+    <button
+      disabled={disabled}
+      type={type}
+      onClick={onClick}
+      className={classNames}
+    >
       {children}
     </button>
   );

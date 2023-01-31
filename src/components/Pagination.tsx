@@ -71,10 +71,18 @@ export default function Pagination({ total = 0 }: IPagination) {
           callback={(pageOptions) => onChangeSelect(pageOptions)}
         />
         <>
-          <Button outlined onClick={() => onClickPage(1)}>
+          <Button
+            disabled={query.page === 1}
+            outlined
+            onClick={() => onClickPage(1)}
+          >
             {"|<"}
           </Button>
-          <Button outlined onClick={() => onClickPage(query.page - 1)}>
+          <Button
+            disabled={query.page === 1}
+            outlined
+            onClick={() => onClickPage(query.page - 1)}
+          >
             {"<"}
           </Button>
           {page > 0
@@ -92,10 +100,18 @@ export default function Pagination({ total = 0 }: IPagination) {
                 );
               })
             : ""}
-          <Button outlined onClick={() => onClickPage(query.page + 1)}>
+          <Button
+            disabled={query.page === page}
+            outlined
+            onClick={() => onClickPage(query.page + 1)}
+          >
             {">"}
           </Button>
-          <Button outlined onClick={() => onClickPage(page)}>
+          <Button
+            disabled={query.page === page}
+            outlined
+            onClick={() => onClickPage(page)}
+          >
             {">|"}
           </Button>
         </>
