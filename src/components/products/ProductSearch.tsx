@@ -14,13 +14,16 @@ import { getParams, push } from "../../utils/params";
 // type
 import type { RootState } from "../../store/store";
 import type { filter, pageOptions } from "../types/types";
-import type { IOption } from "../Select";
+// constant
+import { options } from "../constant/product";
 
 export default function ProductSearch() {
-  const query = useSelector((state: RootState) => state.query);
-  const { inputRef } = useInputQuery();
-  const dispatch = useDispatch();
   const params = getParams();
+
+  const { inputRef } = useInputQuery();
+
+  const query = useSelector((state: RootState) => state.query);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
@@ -33,25 +36,6 @@ export default function ProductSearch() {
       })
     );
   }, [inputRef.current?.value, params.filter, params.pageOptions, params.page]);
-
-  const options: IOption[] = [
-    {
-      value: "all",
-      label: "전체",
-    },
-    {
-      value: "title",
-      label: "상품명",
-    },
-    {
-      value: "brand",
-      label: "브랜드",
-    },
-    {
-      value: "description",
-      label: "상품내용",
-    },
-  ];
 
   const onChangeSelect = (value: string) => {
     push({

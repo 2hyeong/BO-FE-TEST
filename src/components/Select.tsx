@@ -7,7 +7,7 @@ export interface IOption {
 
 interface ISelect {
   defaultValue: string;
-  callback?: (v) => void;
+  callback?: (value: string) => void;
   options: IOption[];
   className?: string;
 }

@@ -50,14 +50,14 @@ export default function Pagination({ total = 0 }: IPagination) {
     push({ key: "page", value: page.toString() });
   };
 
-  const onChangeSelect = (pageOptions: pageOptions) => {
+  const onChangeSelect = (pageOptions: string) => {
     dispatch(
       updateQuery({
         ...query,
-        pageOptions,
+        pageOptions: Number(pageOptions) as pageOptions,
       })
     );
-    push({ key: "pageOptions", value: pageOptions.toString() });
+    push({ key: "pageOptions", value: pageOptions });
   };
 
   return (
@@ -68,7 +68,7 @@ export default function Pagination({ total = 0 }: IPagination) {
           defaultValue={params?.pageOptions || query.pageOptions.toString()}
           options={options}
           className="border-0 mx-2"
-          callback={(v) => onChangeSelect(v)}
+          callback={(pageOptions) => onChangeSelect(pageOptions)}
         />
         <>
           <Button outlined onClick={() => onClickPage(1)}>

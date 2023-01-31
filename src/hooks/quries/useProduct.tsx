@@ -1,6 +1,9 @@
 import { useQuery } from "react-query";
 // constants
 import { DUMMY_API_URL } from "../../components/constant/config";
+// types
+import type { IApiError } from "../../components/types/types";
+// utils
 import { getParams } from "../../utils/params";
 
 export interface IProductResponse {
@@ -24,13 +27,16 @@ export interface IProduct {
   title: string;
 }
 
-const useProduct = () => {
+const getProducts = async (): Promise<IProductResponse> => {
   let url = `${DUMMY_API_URL}/products?limit=100`;
-  const params = getParams();
+  const data = await fetch(url);
+  return data.json();
+};
 
-  return useQuery([params.q], async (): Promise<IProductResponse> => {
-    const data = await fetch(url);
-    return data.json();
+const useProduct = () => {
+  const params = getParams();
+  return useQuery([params.q], getProducts, {
+    onError: (err: IApiError) => err,
   });
 };
 
