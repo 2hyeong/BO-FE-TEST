@@ -20,5 +20,9 @@ button.outlined.isActive {
   background-color: #e2e2e2;
 }
 
-button.small {
+button.disabled {
+  color: rgba(0, 0, 0, 0.26);
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.12);
+  cursor: not-allowed;
 }
