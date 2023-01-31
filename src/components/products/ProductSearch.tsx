@@ -43,6 +43,11 @@ export default function ProductSearch() {
       value,
     });
 
+    push({
+      key: "page",
+      value: "1",
+    });
+
     dispatch(
       updateQuery({
         ...query,
