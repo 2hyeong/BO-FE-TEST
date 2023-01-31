@@ -1,0 +1,24 @@
+button {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.875rem;
+  border-radius: 4px;
+  padding: 5px 16px;
+  font-weight: 500;
+  border: 0;
+  line-height: 1.75;
+}
+
+button.outlined {
+  border: 1px solid #e2e2e2;
+}
+
+button.outlined.isActive {
+  background-color: #e2e2e2;
+}
+
+button.small {
+}

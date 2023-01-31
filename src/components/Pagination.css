@@ -1,0 +1,9 @@
+#pagination button {
+  margin: 0 0.125rem;
+  border: 1px solid hsl(0, 100%, 10%, 0.75);
+}
+
+#pagination button:hover,
+#pagination button.active {
+  background-color: #e2e2e2;
+}

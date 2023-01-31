@@ -1,0 +1,19 @@
+.rounded {
+  border-radius: 0.25rem;
+  box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+    rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+}
+
+.divide-y {
+  border-color: rgba(0, 0, 0, 0.12);
+  border-width: thin 0 0;
+  margin: 0;
+}
+
+.border-bottom {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.border-0 {
+  border: none;
+}

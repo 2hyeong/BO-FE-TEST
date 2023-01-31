@@ -1,0 +1,17 @@
+@import "./styles/Input.css";
+@import "./styles/Layout.css";
+@import "./styles/Text.css";
+@import "./styles/Sizing.css";
+@import "./styles/Background.css";
+@import "./styles/Layout.css";
+@import "./styles/Spacing.css";
+@import "./styles/Border.css";
+@import "./styles/Color.css";
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0 !important;
+  height: 100%;
+}

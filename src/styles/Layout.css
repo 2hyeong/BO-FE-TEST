@@ -1,0 +1,23 @@
+.d-flex {
+  display: flex;
+}
+
+.d-table {
+  display: table;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
