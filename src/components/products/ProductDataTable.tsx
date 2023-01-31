@@ -10,20 +10,8 @@ import { toCurrency } from "../../utils/currency";
 import Pagination from "../Pagination";
 // style
 import "./ProductDataTable.css";
-
-export type IHeaderKey =
-  | "id"
-  | "title"
-  | "brand"
-  | "description"
-  | "price"
-  | "rating"
-  | "stock";
-
-interface IHeader {
-  key: IHeaderKey;
-  name: string;
-}
+// types
+import type { IHeader } from "../types/product";
 
 export default function ProductDataTable() {
   const headers: IHeader[] = [

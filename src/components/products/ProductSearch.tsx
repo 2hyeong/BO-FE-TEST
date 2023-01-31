@@ -15,7 +15,7 @@ import { getParams, push } from "../../utils/params";
 import type { RootState } from "../../store/store";
 import type { filter, pageOptions } from "../types/types";
 // constant
-import { options } from "../constant/product";
+import { filterOptions } from "../constant/product";
 
 export default function ProductSearch() {
   const params = getParams();
@@ -80,12 +80,12 @@ export default function ProductSearch() {
         <span className="font-bold">상품 검색</span>
       </div>
       <Divider />
-      <div className="p-4 d-flex align-center">
+      <div className="p-4 d-flex align-center overflow-x-auto">
         <span className="font-bold">검색</span>
         <form className="d-flex" onSubmit={(e: SyntheticEvent) => onSubmit(e)}>
           <Select
             className="ml-4"
-            options={options}
+            options={filterOptions}
             defaultValue={params.filter || query.filter}
             callback={onChangeSelect}
           />

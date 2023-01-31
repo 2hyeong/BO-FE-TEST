@@ -5,7 +5,6 @@ import "./Pagination.css";
 import Button from "./Button";
 import Select from "./Select";
 // type
-import type { IOption } from "./Select";
 import type { RootState } from "../store/store";
 import type { pageOptions } from "./types/types";
 // store
@@ -13,6 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateQuery } from "../store/reducers/queryReducer";
 // utils
 import { getParams, push } from "../utils/params";
+import { pageOptions as options } from "./constant/product";
 
 interface IPagination {
   total: number;
@@ -22,21 +22,6 @@ export default function Pagination({ total = 0 }: IPagination) {
   const query = useSelector((state: RootState) => state.query);
   const dispatch = useDispatch();
   const params = getParams();
-
-  const options: IOption[] = [
-    {
-      value: 10,
-      label: "10",
-    },
-    {
-      value: 20,
-      label: "20",
-    },
-    {
-      value: 50,
-      label: "50",
-    },
-  ];
 
   const page = Math.ceil(total / query.pageOptions);
 
@@ -86,7 +71,7 @@ export default function Pagination({ total = 0 }: IPagination) {
             {"<"}
           </Button>
           {page > 0
-            ? [...Array(page)].map((v: null, key: number) => {
+            ? [...Array(page)].map((_: null, key: number) => {
                 return (
                   <Fragment key={`pagination-${key}`}>
                     <Button
