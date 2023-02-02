@@ -1,4 +1,4 @@
-# BOFETEST
+# BO-FE-TEST
 
 ### scripts
 ```
@@ -12,3 +12,5 @@ $ pnpm run build
 - no tailwind, mui, css in js library (onlys css)
 - react-query
 - redux-toolkit (first time)
+
+PASSED!
